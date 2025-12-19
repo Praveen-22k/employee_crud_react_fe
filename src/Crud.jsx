@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Crud.css";
-const API_URL = "http://localhost:7654/emp";
+const API_URL = "https://employee-crud-express-be.onrender.com/emp";
+// const API_URL = "http://localhost:7654/emp";
 
 const Crud = () => {
   const [employees, setEmployees] = useState([]);
