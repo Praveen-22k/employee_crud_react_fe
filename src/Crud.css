@@ -1,0 +1,100 @@
+/* Page background */
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+}
+
+/* Main container animation */
+.container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Card style */
+.card {
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Inputs & Select */
+.form-control,
+.form-select {
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.6);
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(118, 75, 162, 0.6);
+}
+
+/* Edit & Delete buttons */
+.btn-warning:hover {
+  transform: scale(1.1);
+}
+
+.btn-danger:hover {
+  transform: scale(1.1);
+}
+
+/* Table */
+.table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table tbody tr {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: #f3f4ff;
+  transform: scale(1.01);
+}
+
+/* Headings */
+h2 {
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-gradient thead th {
+  background: linear-gradient(135deg, #373b44, #4286f4) !important;
+
+  color: white;
+}
