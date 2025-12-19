@@ -98,3 +98,18 @@ h2 {
 
   color: white;
 }
+/* Responsive heading */
+h2 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+/* Table text size on mobile */
+@media (max-width: 576px) {
+  table {
+    font-size: 0.85rem;
+  }
+
+  .btn-sm {
+    padding: 4px 8px;
+  }
+}

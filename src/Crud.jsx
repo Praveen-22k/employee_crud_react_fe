@@ -3,7 +3,6 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Crud.css";
 const API_URL = "https://employee-crud-express-be.onrender.com/emp";
-// const API_URL = "http://localhost:7654/emp";
 
 const Crud = () => {
   const [employees, setEmployees] = useState([]);
@@ -133,7 +132,7 @@ const Crud = () => {
       )}
       <div className="card p-3 mb-4">
         <div className="row g-2">
-          <div className="col-md-4">
+          <div className="col-12 col-sm-6 col-md-4">
             <input
               className="form-control"
               name="name"
@@ -143,7 +142,7 @@ const Crud = () => {
             />
           </div>
 
-          <div className="col-md-4">
+          <div className="col-12 col-sm-6 col-md-4">
             <input
               className="form-control"
               name="id"
@@ -154,7 +153,7 @@ const Crud = () => {
             />
           </div>
 
-          <div className="col-md-4">
+          <div className="col-12 col-sm-6 col-md-4">
             <select
               className="form-select"
               name="gender"
@@ -170,7 +169,7 @@ const Crud = () => {
             </select>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-12 col-sm-6 col-md-4">
             <select
               className="form-select"
               name="department"
@@ -186,7 +185,7 @@ const Crud = () => {
             </select>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-12 col-sm-6 col-md-4">
             <select
               className="form-select"
               name="shift"
@@ -202,7 +201,7 @@ const Crud = () => {
             </select>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-12 col-sm-6 col-md-4">
             <select
               className="form-select"
               name="employeetype"
@@ -219,53 +218,57 @@ const Crud = () => {
           </div>
         </div>
 
-        <button className="btn btn-primary mt-3" onClick={handleSubmit}>
+        <button
+          className="btn btn-primary mt-3 w-100 w-md-auto"
+          onClick={handleSubmit}
+        >
           {editId ? "Update Employee" : "Add Employee"}
         </button>
       </div>
-
-      <table className="table table-bordered text-center table-gradient">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Emp ID</th>
-            <th>Gender</th>
-            <th>Department</th>
-            <th>Shift</th>
-            <th>Type</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employees.map((emp) => (
-            <tr key={emp._id}>
-              <td>{emp.name}</td>
-              <td>{emp.id}</td>
-              <td>{emp.gender}</td>
-              <td>{emp.department}</td>
-              <td>{emp.shift}</td>
-              <td>{emp.employeetype}</td>
-              <td>
-                <button
-                  className="btn btn-warning btn-sm"
-                  onClick={() => handleEdit(emp)}
-                >
-                  Edit
-                </button>
-              </td>
-              <td>
-                <button
-                  className="btn btn-danger btn-sm"
-                  onClick={() => handleDelete(emp._id)}
-                >
-                  Delete
-                </button>
-              </td>
+      <div className="table-responsive">
+        <table className="table table-bordered text-center table-gradient">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Emp ID</th>
+              <th>Gender</th>
+              <th>Department</th>
+              <th>Shift</th>
+              <th>Type</th>
+              <th>Edit</th>
+              <th>Delete</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {employees.map((emp) => (
+              <tr key={emp._id}>
+                <td>{emp.name}</td>
+                <td>{emp.id}</td>
+                <td>{emp.gender}</td>
+                <td>{emp.department}</td>
+                <td>{emp.shift}</td>
+                <td>{emp.employeetype}</td>
+                <td>
+                  <button
+                    className="btn btn-warning btn-sm"
+                    onClick={() => handleEdit(emp)}
+                  >
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => handleDelete(emp._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
